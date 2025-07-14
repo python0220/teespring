@@ -1,0 +1,34 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home-Page-Banner-Container {
+    width: 80vw;
+    height: 275px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: auto;
+
+    // background-color: cyan;
+    .Home-Page-Banner {
+        background-color: #b1b1b1;
+        border-radius: 10px;
+        flex-shrink: 0;
+        width: 99%;
+        height: 100%;
+        margin: 5px 10px;
+
+        img {
+            width: 100%;
+            color: transparent;
+            border-radius: 10px;
+            height: 100%;
+
+        }
+
+    }
+}

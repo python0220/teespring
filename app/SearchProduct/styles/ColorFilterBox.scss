@@ -1,0 +1,155 @@
+@import "../../styles/variables.scss";
+@import "../SerachProductVariables.scss";
+
+.Color-Filter-Box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .Title {
+    font-size: $filter-box-title-size;
+    font-weight: $filter-box-title-weight;
+    letter-spacing: 1.01px;
+  }
+
+  .SelectedColors {
+    width: 100%;
+    min-height: 40px;
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: baseline;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 0%;
+      height: 1.4px;
+      background-color: $secondary-color;
+      border-radius: 4px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .remove-all-icons {
+      width: 100%;
+      height: 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 4px;
+
+      svg {
+        cursor: pointer;
+        color: $secondary-color;
+        font-size: $filter-remove-all-icon-size;
+        margin-right: 10px;
+
+        &:hover {
+          color: $clear-color;
+        }
+      }
+
+      p {
+        font-size: $filter-remove-all-text-size;
+        color: $secondary-color;
+        font-weight: 500;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+
+    .Colors {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+
+      .ColorBox {
+        width: $filter-box-color-size-box-size_w;
+        height: $filter-box-color-size-box-size_h;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        background-color: var(--selected-color-box);
+
+        .CancelIcon {
+          font-size: $filter-addorremove-icon-size;
+          display: none;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &:hover {
+          background-color: white;
+          border: 2px solid $clear-color;
+
+          .CancelIcon {
+            display: flex;
+            color: $clear-color;
+          }
+        }
+      }
+    }
+  }
+
+  .SelectedColors.colorisselected {
+    display: flex;
+
+    &::after {
+      width: 60%;
+    }
+  }
+
+  .Colors-Options {
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+
+    &.empty {
+      display: none;
+    }
+
+    .ColorBox {
+      width: $filter-box-color-size-box-size_w;
+      height: $filter-box-color-size-box-size_h;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: 5px;
+      border-radius: 4px;
+      background-color: var(--filter-color-box);
+
+      .SelectColorIcon {
+        font-size: $filter-addorremove-icon-size;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:hover {
+        border: 2px solid $primary-color;
+        background-color: white;
+
+        .SelectColorIcon {
+          display: flex;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

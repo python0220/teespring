@@ -1,0 +1,205 @@
+@import "../SerachProductVariables.scss";
+@import "../../styles/variables.scss";
+
+.Filter-Brand-Box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // gap: 5px;
+
+    .Title {
+        font-size: $filter-box-title-size;
+        font-weight: $filter-box-title-weight;
+        letter-spacing: 1.01px;
+    }
+
+    .Clear-All-Selected-Options-Box {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: baseline;
+        position: relative;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+
+
+        &::after {
+            content: "";
+            width: 00%;
+            height: 2px;
+            background-color: $secondary-color;
+            border-radius: 4px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .Clear-All-Selected-Box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            min-height: 35px;
+
+            gap: 5px;
+
+            .Clear-All-Selected-Options-icon {
+                font-size: 20px;
+
+                &:hover {
+                    color: $clear-color;
+                }
+            }
+
+            .Clear-All-Selected-Options-Text {
+                font-size: 14px;
+                font-weight: 500;
+
+            }
+
+
+        }
+
+        .Selected-Brand-Options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+
+            width: 100%;
+            gap: 8px;
+
+            .Selected-OptionBox {
+                display: flex;
+                justify-content: flex-start;
+                gap: 5px;
+                align-items: center;
+                cursor: pointer;
+                border-radius: 4px;
+                background-color: #dadada7b;
+                padding: 3px 5px;
+                flex-wrap: wrap;
+                border: 2px solid rgb(231, 231, 231);
+                margin-bottom: 5px;
+                position: relative;
+
+                .Options-Remove-Button {
+                    font-size: 20px;
+                    color: $clear-color;
+                    min-width: 25px;
+                    height: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 2;
+                    background-color: transparent; // Optional, in case it overlaps
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .Options-Text {
+                    font-size: 12px;
+                    font-weight: 500;
+                    letter-spacing: 1.01px;
+                }
+
+                &:hover {
+                    border: 2px solid $clear-color;
+
+                    .Options-Remove-Button {
+                        display: flex;
+                    }
+
+                    .Options-Text {
+                        opacity: 0;
+                    }
+                }
+            }
+
+        }
+
+
+    }
+    .Clear-All-Selected-Options-Box.brandisselected{
+        display: flex;
+        &::after{
+            width: 60%;
+        }
+    }
+
+
+    .Filter-Options-Box {
+        width: 100%;
+        min-height: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        margin-top: 5px;
+        &.empty{
+            display: none;
+        }
+
+        .OptionBox {
+            display: flex;
+            justify-content: flex-start;
+            gap: 5px;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 4px;
+            background-color: #dadada7b;
+            padding: 3px 5px;
+            flex-wrap: wrap;
+            border: 2px solid rgb(231, 231, 231);
+            position: relative;
+            margin-bottom: 5px;
+
+
+
+
+            .Options-Text {
+                font-size: 12px;
+                font-weight: 500;
+                letter-spacing: 1.01px;
+
+            }
+
+            .Options-Select-Button {
+                font-size: 20px;
+                color: $primary-color;
+                min-width: 25px;
+                height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                background-color: transparent; // Optional, in case it overlaps
+                display: none;
+                justify-content: center;
+                align-items: center;
+            }
+
+
+            &:hover {
+                border: 2px solid $primary-color;
+
+                .Options-Text {
+                    opacity: 0;
+                }
+
+                .Options-Select-Button {
+                    display: flex;
+
+
+                }
+
+            }
+
+
+        }
+    }
+}

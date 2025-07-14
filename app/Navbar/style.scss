@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+@import "./../styles/animations";
+@import "./../styles/variables";
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Navbar {
+  padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 58px;
+  background-color: #fff;
+
+  // Branding Section
+  .Branding {
+    width: 140px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .Logo {
+      font-family: "Dancing Script", cursive;
+      font-weight: 800;
+      font-size: 38px;
+      color: $primary-color;
+      cursor: pointer;
+    }
+  }
+
+  // Search Bar Section
+  .Search-Bar {
+    width: 28%;
+    height: 90%;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f1f5ff;
+    border-radius: 8px;
+    position: relative;
+
+    .Search-Container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      cursor: pointer;
+
+      .Search-Icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 10px 10px 15px;
+        transition: 1s linear;
+
+        &.Focused svg {
+          color: $primary-color;
+        }
+
+        svg {
+          color: rgba(42, 41, 41, 0.795);
+          font-size: 18px;
+          transition: 0.4s ease;
+        }
+      }
+
+      .Search-Box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80%;
+
+        input {
+          width: 100%;
+          height: 100%;
+          font-size: 16px;
+          padding-right: 20px;
+          color: rgba(80, 79, 79, 0.516);
+          background: transparent;
+          border: none;
+          transition: 0.4s ease;
+
+          &:focus {
+            outline: none;
+            color: $primary-color;
+            letter-spacing: 1.2px;
+          }
+
+          &::placeholder {
+            color: rgba(42, 41, 41, 0.795);
+            font-size: 16px;
+          }
+        }
+      }
+
+      &:hover {
+        .Search-Icon {
+          animation: bounce 2.4s cubic-bezier(.28, .84, .42, 1) 0.3s 1;
+
+          &.NotFocusedSearchIcon {
+            animation-iteration-count: infinite;
+          }
+
+          svg {
+            color: $primary-color;
+            transition: color 0.2s linear;
+          }
+        }
+      }
+    }
+
+    .Search-Suggestions {
+      width: 100%;
+      background: #fff;
+      border-radius: 6px;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      box-shadow: 2px 2px 9px #c6c6c6;
+      padding: 5px;
+      transition: 0.5s ease-in;
+      display: none;
+      
+      z-index: 1000;
+      &.active{
+        display: block;
+      }
+
+      .Suggestion-Box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        margin-top: 5px;
+        color: $secondary-color;
+        cursor: pointer;
+
+        .icons {
+          width: 40px;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .Suggestion {
+          width: calc(100% - 50px);
+          text-align: left;
+          font-weight: 500;
+          font-size: 16px;
+          letter-spacing: 1.2px;
+        }
+
+        &:hover {
+          background: #f1f5ff;
+
+          .icons {
+            animation: bounce 1.8s infinite cubic-bezier(.28, .84, .42, 1) 0.3s;
+          }
+
+          .icons,
+          .Suggestion {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  // User Options Section
+  .User-Options {
+    width: 200px;
+    height: 100%;
+    margin-right: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .Cart-Page,
+    .Profile-Page {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 6px;
+      margin-right: 20px;
+      color: $secondary-color;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.5s linear;
+
+      .Title {
+        font-size: 17px;
+      }
+
+      .icon svg {
+        font-size: 20px;
+      }
+
+
+      .Title,
+      .icon,
+      .Drop-Down-Arrow {
+        margin-left: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        transition: rotate 0.4s ease;
+      }
+    }
+
+    .Profile-Page:hover {
+      background-color: $primary-color;
+      color: #fff;
+
+      .Drop-Down-Arrow {
+        rotate: 180deg;
+      }
+    }
+    .Cart-Page{
+      .icon svg{
+        font-size: 22px;
+      }
+    }
+
+    .Cart-Page:hover {
+      color: $primary-color;
+    }
+  }
+}

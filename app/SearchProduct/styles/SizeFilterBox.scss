@@ -9,6 +9,7 @@ $size-box-background-color: #dadada7b;
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 8px;
 
   .Title {
     font-size: $filter-box-title-size;

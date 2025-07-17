@@ -5,7 +5,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    // gap: 5px;
+    gap: 8px;
 
     .Title {
         font-size: $filter-box-title-size;
@@ -85,7 +85,7 @@
                 position: relative;
 
                 .Options-Remove-Button {
-                    font-size: 20px;
+                    font-size: $filter-addorremove-icon-size;
                     color: $clear-color;
                     min-width: 25px;
                     height: 100%;
@@ -123,9 +123,11 @@
 
 
     }
-    .Clear-All-Selected-Options-Box.brandisselected{
+
+    .Clear-All-Selected-Options-Box.brandisselected {
         display: flex;
-        &::after{
+
+        &::after {
             width: 60%;
         }
     }
@@ -139,7 +141,8 @@
         gap: 8px;
         align-items: center;
         margin-top: 5px;
-        &.empty{
+
+        &.empty {
             display: none;
         }
 
@@ -168,7 +171,7 @@
             }
 
             .Options-Select-Button {
-                font-size: 20px;
+                font-size: $filter-addorremove-icon-size;
                 color: $primary-color;
                 min-width: 25px;
                 height: 100%;

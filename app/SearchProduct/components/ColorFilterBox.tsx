@@ -73,7 +73,8 @@ const ColorFilterBox = () => {
                     </div>
                     <div className="Colors">
                         {selectedColorsList.map((color) => (
-                            <div key={color} className={`ColorBox ${color}`} style={{ "--selected-color-box": color } as React.CSSProperties} onClick={() => { RemoveTheSelectedColor(color) }} >
+                            
+                            <div key={color} className={`ColorBox ${color}`} style={{ "--selected-color-box": color  } as React.CSSProperties} onClick={() => { RemoveTheSelectedColor(color) }} >
                                 <div className="CancelIcon selected">
                                     <FontAwesomeIcon icon={faSquareXmark} id={`RemoveSelectedColor${color}`} />
                                 </div>
